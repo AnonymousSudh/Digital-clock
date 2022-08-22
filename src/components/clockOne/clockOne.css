@@ -1,0 +1,85 @@
+*{
+    padding: 0;
+    margin: 0;
+}
+.clock1{
+    /* border: 1px solid red; */
+    display: flex;
+    width: 100vw;
+    height: 100vh;
+}
+.clock1container{
+    /* border: 10px solid rgb(128, 1, 255); */
+    display: flex;
+    width: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    /* position: relative; */
+}
+.clockOne{
+    border: 10px solid green;
+    content: " ";
+    width:50%;
+    height: 400px;
+    width: 400px;
+    border-radius: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+}
+.dot{
+    /* content:" "; */
+    position: absolute;
+    /* color: black; */
+    /* width: 10px; */
+    height: 10px;
+}
+.dot h1{
+    /* border: 1px solid green; */
+    line-height: 0%;
+}
+.hourhand{
+    bottom: 50%;
+    height: 15vh;
+    border: 1px solid rgb(217, 255, 3);
+    position: absolute;
+    transform-origin: 50% bottom;
+}
+
+.minutehand{
+    bottom: 50%;
+    height: 20vh;
+    border: 2px solid red;
+    position: absolute;
+    transform-origin: 50% bottom;
+}
+.secondhand{
+    bottom: 50%;
+    height: 25vh;
+    border: 1px solid green;
+    position: absolute;
+    transform-origin: 50% bottom;
+    
+}
+.timeContainer{
+    width: 50%;
+    /* border: 1px solid green; */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    /* position: relative; */
+    flex-direction: row;
+    margin-left: 25%;
+}
+.amPm{
+    border: 1px solid red;
+}
+.timegroup{
+    border: 1px solid green;
+}
+.time{
+    display: flex;
+    flex-direction: row;
+}
