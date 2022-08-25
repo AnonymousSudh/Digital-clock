@@ -1,29 +1,40 @@
 import React, { useEffect } from 'react'
 import { useState } from 'react';
-require("./clockOne.css");
+import { MdDarkMode } from "react-icons/md"
+import { FiMoon } from "react-icons/fi"
+import { BsSun } from "react-icons/bs"
+// FiMoon
 
+
+
+
+require("./clockOne.css");
+// import { IconName } from "react-icons/im";
 function Clock1() {
 
-  const [time, settime] = useState(0);
-  const [hour, sethour] = useState("");
-  const [ampm, setampm] = useState("");
-  const [day, setDay] = useState(2);
-  // const array = [0,1,2,3,4,5,6,7,8,9]
-  // const date = new Date();
-  // // sethour(date.getHours());
 
-  // if (date.getHours() > 12) {
-  //   setampm("PM")
-  // } else {
-  //   setampm("AM")
-  // }
+  const [hour, sethour] = useState("");
+  const [day, setDay] = useState();
+  const [datee, setDate] = useState();
+  const [month, setMonths] = useState();
+  const [year, setYear] = useState();
+
+
 
   useEffect(() => {
     const date = new Date();
+
     var second = date.getSeconds();
     sethour(date.getHours());
     var dayno = date.getDay();
     setDay(dayno);
+    setDate(date.getDate());
+    setMonths(date.getMonth() + 1);
+    setYear(date.getFullYear())
+    // console.log(day);
+
+
+
     // document.getElementsByClassName("ccc")[0].style.transform = `rotate(${((second * 6) - 180)}deg)`;
 
 
@@ -55,16 +66,21 @@ function Clock1() {
       var hourr = currentTime.getHours();
       var minute = currentTime.getMinutes();
       var second = currentTime.getSeconds();
-     if(hourr ==0 || hourr==1 ||  hourr==2||hourr==3 || hourr==4 || hourr==5 || hourr==6 || hourr==7 || hourr==8 ||hourr==9){
-      hourr = "0"+hourr;
-      // hourr.concat(0)
+      if (hourr == 0 || hourr == 1 || hourr == 2 || hourr == 3 || hourr == 4 || hourr == 5 || hourr == 6 || hourr == 7 || hourr == 8 || hourr == 9) {
+        hourr = "0" + hourr;
+        // hourr.concat(0)
 
-     }
-     if(second ==0 || second==1 ||  second==2||second==3 || second==4 || second==5 || second==6 || second== 7|| second==8 ||second==9){
-      second = "0"+second
-      // second.concate(0)
+      }
+      if (second == 0 || second == 1 || second == 2 || second == 3 || second == 4 || second == 5 || second == 6 || second == 7 || second == 8 || second == 9) {
+        second = "0" + second
+        // second.concate(0)
 
-     }
+      }
+      if (minute == 0 || minute == 1 || minute == 2 || minute == 3 || minute == 4 || minute == 5 || minute == 6 || minute == 7 || minute == 8 || minute == 9) {
+        minute = "0" + minute
+        // second.concate(0)
+
+      }
       // if()
 
 
@@ -99,8 +115,28 @@ function Clock1() {
 
   }, [])
 
+
+
+  const dayTheme = () => {
+    // alert("hello")
+    // console.log( document.querySelector(':root').style.getPropertyValue('--mate_white'));
+    document.querySelector(':root').style.setProperty('--mate_white', '#070606');
+    document.querySelector(':root').style.setProperty('--mate_black', '#ffffff');
+    // alert("sds")
+
+  }
+  const nightTheme = () => {
+    document.querySelector(':root').style.setProperty('--mate_white', '#ffffff');
+    document.querySelector(':root').style.setProperty('--mate_black', '#070606');
+  }
+
   return (
     <>
+      <div className="darkthemecontainer">
+
+        <FiMoon className='night' onClick={nightTheme} />
+        <BsSun className='daytheme' onClick={dayTheme} />
+      </div>
       <div className="clock1">
         <div className="clock1container">
           <div className="ccc">
@@ -117,8 +153,7 @@ function Clock1() {
 
 
         <div className="timeContainer">
-          <div className="component1">
-
+          <div className="timeContainerdiv">
 
             <div className="amPm">
               {hour > 12 ? (
@@ -140,6 +175,13 @@ function Clock1() {
             </div>
           </div>
           <div className="day">
+            <div className="dateDiv">
+              <h1 className='date'>{datee}</h1>
+              <h1 className='comma'>.</h1>
+              <h1 className='month'>{month}</h1>
+              <h1 className='comma'>.</h1>
+              <h1 className='year'>{year}</h1>
+            </div>
             <h1 className='digitalDay'></h1>
           </div>
 

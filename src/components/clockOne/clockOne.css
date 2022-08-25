@@ -1,22 +1,45 @@
-*{
+* {
     padding: 0;
     margin: 0;
 }
-:root{
-    --mate-black: #070606;
+
+:root {
+    --mate_black: #070606;
     --mate_white: #ffffff
 }
 
+.darkthemecontainer {
+    /* border: 10px solid red; */
+    background-color: whitesmoke;
+    display: flex;
 
-.clock1{
+    position: absolute;
+    right: 0;
+    top: 3px;
+    right: 20px;
+    width: 8%;
+    align-items: center;
+    justify-content: space-evenly;
+    height: 40px;
+
+}
+
+.daytheme,
+.night {
+    width: 50px;
+    height: 30px;
+}
+
+.clock1 {
     /* border: 1px solid red; */
     display: flex;
     width: 100vw;
     height: 100vh;
     justify-content: space-evenly;
-    background-color: var(--mate-black);
+    background-color: var(--mate_black);
 }
-.clock1container{
+
+.clock1container {
     /* border: 10px solid rgb(128, 1, 255); */
     display: flex;
     width: 50%;
@@ -25,10 +48,11 @@
     align-items: center;
     /* position: relative; */
 }
-.ccc{
+
+.ccc {
     position: relative;
     box-shadow: 4px 0px var(--mate_white);
-    width:50%;
+    width: 50%;
     height: 400px;
     width: 400px;
     border-radius: 100%;
@@ -38,23 +62,25 @@
     animation-timing-function: linear;
     animation-fill-mode: forwards; */
     /* transform: rotate(0deg); */
-    
+
 }
 
-@keyframes rotatesec{
+@keyframes rotatesec {
+
     /* 0%{
         transform: rotate(0deg);
 
     } */
-    100%{
+    100% {
         transform: rotate(360deg);
     }
 }
-.clockOne{
+
+.clockOne {
     /* border: 10px solid var(--); */
     /* box-shadow: 2px 3px red; */
     content: " ";
-    width:50%;
+    width: 50%;
     height: 400px;
     width: 400px;
     border-radius: 100%;
@@ -64,18 +90,21 @@
     position: absolute;
     /* transform:rotate(20deg) */
 }
-.dot{
+
+.dot {
     /* content:" "; */
     position: absolute;
     /* color: black; */
     /* width: 10px; */
     height: 10px;
 }
-.dot h1{
+
+.dot h1 {
     /* border: 1px solid green; */
     line-height: 0%;
 }
-.hourhand{
+
+.hourhand {
     bottom: 50%;
     height: 15vh;
     border: 1.5px solid var(--mate_white);
@@ -84,7 +113,7 @@
     transform-origin: 50% bottom;
 }
 
-.minutehand{
+.minutehand {
     bottom: 50%;
     height: 20vh;
     border: 0.7px dashed var(--mate_white);
@@ -92,38 +121,99 @@
     background-color: white;
     transform-origin: 50% bottom;
 }
-.secondhand{
+
+.secondhand {
     bottom: 50%;
     height: 25vh;
     /* border: 1px solid green; */
     position: absolute;
     transform-origin: 50% bottom;
-    
+
 }
-.timeContainer{
+
+.timeContainer {
     width: 50%;
-    border: 1px solid green;
+    /* border: 1px solid green; */
     display: flex;
     justify-content: center;
     align-items: center;
     /* position: relative; */
     flex-direction: column;
+    /* position: relative; */
     /* margin-left: 25%; */
 }
-.component1{
+.timeContainerdiv{
+    /* border: 1px solid red; */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    /* position: relative; */
+    /* flex-direction: column; */
+}
+.component1 {
     display: flex;
 }
-.amPm{
-    border: 1px solid red;
+
+.amPm {
+    /* border: 1px solid red; */
+    font-size: 0.5rem;
+    margin-right: 20px;
+    height: 70%;
 }
-.timegroup{
-    border: 1px solid green;
+
+.timegroup {
+    /* border: 1px solid green; */
+    font-size: 2rem;
+    /* letter-spacing: 0.6rem; */
 }
-.time{
+.colan{
+    margin-left: 10px;
+    margin-right: 10px;
+}
+.time {
     display: flex;
     flex-direction: row;
 }
+.day{
+    display: flex;
 
-.digitalHour , .digitalMinute, .colan, .digitalSecond , .digitalDay , .am_pm{
+    /* border: 10px solid red; */
+    /* height: 100%; */
+    /* width: 100%; */
+}
+.digitalDay{
+    /* border: 1px solid green; */
+    /* display: flex; */
+    /* flex-direction: ; */
+
+}
+.dateDiv{
+    /* border: 1px solid red; */
+    display: flex;
+    margin-right: 10px;
+
+}
+
+.date,
+.month,
+.year,
+.comma,
+.digitalDay{
+    /* border: 1px solid red; */
+    font-size: 1.3rem;
+    
+}
+
+
+.digitalHour,
+.digitalMinute,
+.colan,
+.digitalSecond,
+.digitalDay,
+.am_pm,
+.date,
+.month,
+.year,
+.comma{
     color: var(--mate_white);
 }
