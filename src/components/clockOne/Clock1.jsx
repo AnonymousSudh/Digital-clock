@@ -37,52 +37,18 @@ function Clock1() {
 
     // document.getElementsByClassName("ccc")[0].style.transform = `rotate(${((second * 6) - 180)}deg)`;
 
-
-
-    if (dayno == 1) {
-      document.getElementsByClassName("digitalDay")[0].innerHTML = "Monday";
-    }
-    else if (dayno == 2) {
-      document.getElementsByClassName("digitalDay")[0].innerHTML = "Tuesday";
-    }
-    else if (dayno == 3) {
-      document.getElementsByClassName("digitalDay")[0].innerHTML = "Wednesday";
-    }
-    else if (dayno == 4) {
-      document.getElementsByClassName("digitalDay")[0].innerHTML = "Thursday";
-    }
-    else if (dayno == 5) {
-      document.getElementsByClassName("digitalDay")[0].innerHTML = "Friday";
-    }
-    else if (dayno == 6) {
-      document.getElementsByClassName("digitalDay")[0].innerHTML = "Saturday";
-    }
-    else if (dayno == 7) {
-      document.getElementsByClassName("digitalDay")[0].innerHTML = "Sunday";
-    }
+    const weekDays = ["Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"];
+    document.getElementsByClassName("digitalDay")[0].innerHTML = weekDays[dayno];
 
     const rotatesecond = () => {
       var currentTime = new Date();
       var hourr = currentTime.getHours();
       var minute = currentTime.getMinutes();
       var second = currentTime.getSeconds();
-      if (hourr == 0 || hourr == 1 || hourr == 2 || hourr == 3 || hourr == 4 || hourr == 5 || hourr == 6 || hourr == 7 || hourr == 8 || hourr == 9) {
-        hourr = "0" + hourr;
-        // hourr.concat(0)
 
-      }
-      if (second == 0 || second == 1 || second == 2 || second == 3 || second == 4 || second == 5 || second == 6 || second == 7 || second == 8 || second == 9) {
-        second = "0" + second
-        // second.concate(0)
-
-      }
-      if (minute == 0 || minute == 1 || minute == 2 || minute == 3 || minute == 4 || minute == 5 || minute == 6 || minute == 7 || minute == 8 || minute == 9) {
-        minute = "0" + minute
-        // second.concate(0)
-
-      }
-      // if()
-
+      if(hourr >= 0 && hourr <= 9) hourr = "0" + hourr;
+      if(second >=0 && second <= 9) second = "0" + second;
+      if(minute >= 0 && minute <= 9) minute = "0" + minute;
 
 
       // console.log(second);
